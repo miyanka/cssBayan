@@ -71,26 +71,14 @@ body {
   display: none;
 }
 
-@media screen and (min-width: 820px) {
-  .wrapper {
-    width: 70%;
-    font-size: 1.5rem;
-  }
-  .accordion__item-input:checked ~ .accordion__item-meme {
-    width: 50%;
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  .wrapper {
-    font-size: 1.7rem;
-    max-width: 1000px;
-  }
-}
-
 @media (hover: hover) {
   .accordion__item:hover {
     cursor: pointer;
+  }
+
+  .accordion__item:hover .accordion__item-meme {
+    padding-bottom: 1em;
+    width: 80%;
   }
 
   .accordion:hover .accordion__item-icon {
@@ -99,5 +87,28 @@ body {
 
   .accordion:hover .accordion__item-title {
     color: #000000;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .wrapper {
+    width: 70%;
+    font-size: 1.5rem;
+  }
+  .accordion__item-input:checked ~ .accordion__item-meme {
+    width: 50%;
+  }
+
+  @media (hover: hover) {
+    .accordion__item:hover .accordion__item-meme {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .wrapper {
+    font-size: 1.7rem;
+    max-width: 1000px;
   }
 }
