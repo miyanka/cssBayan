@@ -36,15 +36,19 @@ body {
   color: #216df3;
 }
 
+.accordion__item-icon {
+  transition: transform 0.1s;
+}
+
 .accordion__item-meme {
-  width: 100%;
+  width: 0%;
   align-self: center;
-  padding-bottom: 1em;
-  display: none;
+  transition: width 0.2s;
 }
 
 .accordion__item-input:checked ~ .accordion__item-meme {
-  display: inline;
+  padding-bottom: 1em;
+  width: 80%;
 }
 
 .accordion__item-input:checked ~ .accordion__item-title {
