@@ -1,0 +1,62 @@
+html,
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  background-color: #ffffe0;
+  padding: 1em;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion_heading {
+  font-weight: 900;
+}
+
+.accordion__item {
+  display: flex;
+  flex-direction: column;
+  border-top: 0.1em solid #d3d3d3;
+}
+
+.accordion__item-title {
+  padding: 0.5em 0;
+  font-weight: 700;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #216df3;
+}
+
+.accordion__item-meme {
+  width: 100%;
+  align-self: center;
+  padding-bottom: 1em;
+  display: none;
+}
+
+.accordion__item-input:checked ~ .accordion__item-meme {
+  display: inline;
+}
+
+.accordion__item-input:checked ~ .accordion__item-title {
+  color: #000000;
+}
+
+.accordion__item-input:checked
+  ~ .accordion__item-title
+  > .accordion__item-icon {
+  transform: rotate(45deg);
+}
+
+.accordion__item-input_visually-hidden {
+  display: none;
+}
