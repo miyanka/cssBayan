@@ -35,11 +35,14 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #216df3;
+  transition: color 0.2s;
 }
 
 .accordion__item-icon {
-  transition: transform 0.1s;
+  transition: transform 0.3s;
   font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .accordion__item-meme {
@@ -81,5 +84,19 @@ body {
   .wrapper {
     font-size: 1.7rem;
     max-width: 1000px;
+  }
+}
+
+@media (hover: hover) {
+  .accordion__item:hover {
+    cursor: pointer;
+  }
+
+  .accordion:hover .accordion__item-icon {
+    opacity: 1;
+  }
+
+  .accordion:hover .accordion__item-title {
+    color: #000000;
   }
 }
