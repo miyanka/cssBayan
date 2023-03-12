@@ -1,0 +1,143 @@
+html,
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffe0;
+}
+
+.wrapper {
+  padding: 1em 1.5em;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion_heading {
+  font-weight: 900;
+}
+
+.accordion_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion__item {
+  display: flex;
+  flex-direction: column;
+  border-top: 0.1em solid #d3d3d3;
+}
+
+.accordion__item-title {
+  padding: 0.5em 0;
+  font-weight: 700;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #216df3;
+  transition: color 0.2s;
+}
+
+.accordion__item-icon {
+  font-weight: 700;
+  opacity: 1;
+  transition: transform 0.2s, opacity 0.1s;
+  transform: rotate(-45deg);
+}
+
+.accordion__item-meme {
+  width: 0%;
+  align-self: center;
+  transition: width 0.2s;
+}
+
+.accordion__item-input:checked ~ .accordion__item-meme {
+  padding-bottom: 1em;
+  width: 80%;
+}
+
+.accordion__item-input:checked ~ .accordion__item-title {
+  color: #000000;
+}
+
+.accordion__item-input:checked
+  ~ .accordion__item-title
+  > .accordion__item-icon {
+  transform: rotate(0);
+}
+
+.accordion__item-input_visually-hidden {
+  display: none;
+}
+
+@media (hover: hover) {
+  .accordion_content:hover .accordion__item {
+    cursor: pointer;
+  }
+
+  .accordion__item:hover .accordion__item-meme {
+    padding-bottom: 1em;
+    width: 80%;
+  }
+
+  .accordion__item:hover .accordion__item-icon {
+    transform: rotate(0);
+  }
+
+  .accordion__item-icon {
+    opacity: 0;
+  }
+
+  .accordion_content:hover .accordion__item-icon {
+    opacity: 1;
+  }
+
+  .accordion_content:hover .accordion__item-title {
+    color: #000000;
+  }
+
+  .accordion__item:active {
+    opacity: 0.7;
+  }
+
+  .accordion__item:active .accordion__item-title {
+    color: #216df3;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .wrapper {
+    width: 70%;
+    font-size: 1.5rem;
+  }
+  .accordion__item-input:checked ~ .accordion__item-meme {
+    width: 50%;
+  }
+
+  @media (hover: hover) {
+    .accordion__item:hover .accordion__item-meme {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .wrapper {
+    font-size: 1.7rem;
+  }
+
+  .accordion__item-input:checked ~ .accordion__item-meme {
+    width: 40%;
+  }
+
+  @media (hover: hover) {
+    .accordion__item:hover .accordion__item-meme {
+      width: 40%;
+    }
+  }
+}
