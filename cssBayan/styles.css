@@ -88,6 +88,15 @@ body {
   .accordion:hover .accordion__item-title {
     color: #000000;
   }
+
+  .accordion__item:active {
+    cursor: wait;
+    opacity: 0.7;
+  }
+
+  .accordion__item:active .accordion__item-title {
+    color: #216df3;
+  }
 }
 
 @media screen and (min-width: 820px) {
