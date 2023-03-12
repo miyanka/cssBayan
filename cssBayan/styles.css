@@ -6,7 +6,7 @@ body {
 }
 
 .wrapper {
-  padding: 1em;
+  padding: 1em 1.5em;
   min-height: 100vh;
   box-sizing: border-box;
   font-size: 1rem;
@@ -20,6 +20,11 @@ body {
 
 .accordion_heading {
   font-weight: 900;
+}
+
+.accordion_content {
+  display: flex;
+  flex-direction: column;
 }
 
 .accordion__item {
@@ -39,11 +44,10 @@ body {
 }
 
 .accordion__item-icon {
-  transition: transform 0.3s;
   font-weight: 700;
-  opacity: 0;
-  transition: opacity 0.3s;
-  transform: rotate(45deg);
+  opacity: 1;
+  transition: transform 0.2s, opacity 0.1s;
+  transform: rotate(-45deg);
 }
 
 .accordion__item-meme {
@@ -72,7 +76,7 @@ body {
 }
 
 @media (hover: hover) {
-  .accordion__item:hover {
+  .accordion_content:hover .accordion__item {
     cursor: pointer;
   }
 
@@ -81,16 +85,23 @@ body {
     width: 80%;
   }
 
-  .accordion:hover .accordion__item-icon {
+  .accordion__item:hover .accordion__item-icon {
+    transform: rotate(0);
+  }
+
+  .accordion__item-icon {
+    opacity: 0;
+  }
+
+  .accordion_content:hover .accordion__item-icon {
     opacity: 1;
   }
 
-  .accordion:hover .accordion__item-title {
+  .accordion_content:hover .accordion__item-title {
     color: #000000;
   }
 
   .accordion__item:active {
-    cursor: wait;
     opacity: 0.7;
   }
 
@@ -118,6 +129,15 @@ body {
 @media screen and (min-width: 1920px) {
   .wrapper {
     font-size: 1.7rem;
-    max-width: 1000px;
+  }
+
+  .accordion__item-input:checked ~ .accordion__item-meme {
+    width: 40%;
+  }
+
+  @media (hover: hover) {
+    .accordion__item:hover .accordion__item-meme {
+      width: 40%;
+    }
   }
 }
